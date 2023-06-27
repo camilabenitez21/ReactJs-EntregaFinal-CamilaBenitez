@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Container, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa';
 import CartWidget from './CartWidget';
 import logo from './img/Candelitte.jpg';
-import { Link } from 'react-router-dom';
 
 function MiNavbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -32,7 +33,10 @@ function MiNavbar() {
             <Nav.Link as={Link} to="/nosotros">Nosotros</Nav.Link>
             <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
           </Nav>
-          <CartWidget />
+          <Button variant="outline-dark" as={Link} to="/checkout">
+            <FaShoppingCart />
+            <CartWidget />
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -10,18 +10,19 @@ function CartWidget({ cartItems }) {
           <p>Your cart is empty.</p>
         ) : (
           <ul>
-            {cartItems && cartItems.map((item) => (
-              <li key={item.id}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src={item.image} />
-                  <Card.Body>
-                    <Card.Title>{item.name}</Card.Title>
-                    <Card.Text>{item.description}</Card.Text>
-                    <Button variant="danger">Remove</Button>
-                  </Card.Body>
-                </Card>
-              </li>
-            ))}
+            {cartItems &&
+              cartItems.map((item) => (
+                <li key={item.id}>
+                  <Card style={{ width: "18rem" }}>
+                    <Card.Img variant="top" src={item.image} />
+                    <Card.Body>
+                      <Card.Title>{item.name}</Card.Title>
+                      <Card.Text>{item.description}</Card.Text>
+                      <Button variant="danger">Remove</Button>
+                    </Card.Body>
+                  </Card>
+                </li>
+              ))}
           </ul>
         )}
       </div>
